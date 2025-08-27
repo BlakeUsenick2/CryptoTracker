@@ -1,6 +1,8 @@
 body {
     background: #22272d;
-    color:white;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: all 0.3s ease;
 }
 
 .form-control {
@@ -8,13 +10,22 @@ body {
     background-color: #3e4c5c;
     background-clip: padding-box;
     border: 1px solid #5b7088;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .form-control:focus {
     color: #ffffff;
-    background-color: #3e4c5c;
-    background-clip: padding-box;
-    border: 1px solid #5b7088;
+    background-color: #4a5a6d;
+    border: 1px solid #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.form-control:hover {
+    background-color: #4a5a6d;
+    border-color: #6c8aa8;
 }
 
 option {
@@ -26,6 +37,15 @@ option {
 
 .btn {
     margin-top: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .form-row {
@@ -36,5 +56,94 @@ option {
     display: flex;
     gap: 10px;
     flex-direction: column;
-    flex:1;
+    flex: 1;
+}
+
+.input label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #b3c7d6;
+    margin-bottom: 5px;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .input {
+        margin-bottom: 15px;
+    }
+    
+    .form-group {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+}
+
+/* Table styling classes */
+.crypto-table {
+    border-color: #22272d;
+    width: 85%;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.crypto-table th,
+.crypto-table td {
+    transition: all 0.3s ease;
+    padding: 12px 16px;
+}
+
+.crypto-table tbody tr:hover th,
+.crypto-table tbody tr:hover td {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+.table-header-primary {
+    background: #0d6efd;
+    color: white;
+    width: 35%;
+}
+
+.table-header-secondary {
+    background: #0f5bcc;
+    color: white;
+    width: 65%;
+}
+
+.table-row-header {
+    background: #3e4c5c;
+    color: #b3ebff;
+}
+
+.table-row-data {
+    background: #5d6b7d;
+    color: #b3ebff;
+}
+
+.table-volume-header {
+    background: #3e4c5c;
+    color: #fff9c4;
+}
+
+.table-volume-data {
+    background: #5d6b7d;
+    color: #fff9c4;
+}
+
+.table-change-header {
+    background: #3e4c5c;
+    color: #ffc4c4;
+}
+
+.table-change-data {
+    background: #5d6b7d;
+    color: #ffc4c4;
 }
